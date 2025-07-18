@@ -65,7 +65,7 @@ export const stepsData = [
 export const plans = [
   {
     id: "Basic",
-    price: 100,
+    price: 50,
     credits: 100,
     desc: "Best for personal use.",
     benefits: [
@@ -77,7 +77,7 @@ export const plans = [
   },
   {
     id: "Advanced",
-    price: 500,
+    price: 300,
     credits: 800,
     desc: "Best for business use.",
     benefits: [
@@ -90,7 +90,7 @@ export const plans = [
   },
   {
     id: "Business",
-    price: 1500,
+    price: 1000,
     credits: 3000,
     desc: "Best for enterprise use.",
     benefits: [
