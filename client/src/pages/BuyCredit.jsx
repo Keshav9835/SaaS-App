@@ -21,7 +21,17 @@ const BuyCredit = () => {
         order_id: order.id,
         receipt: order.receipt,
         handler: async (response)=>{
-          console.log(response);
+          try {
+            const {data} = await axios.post(backendUrl + '/api/user/verify-razor', response, {headers: {token}})
+            if(data.success){
+              loadCreditsData();
+              navigate('/')
+              toast.success('Credits Added')
+            }
+          } catch (error) {
+            console.log(error);
+            toast.error(error.message)
+          }
         }
       }
 
@@ -34,7 +44,6 @@ const BuyCredit = () => {
         if(!user){
           setShowLogin(true)
         }
-        console.log("Sending token:", token);
         const {data} = await axios.post(backendUrl + '/api/user/pay-razor', {planId}, {headers: {token}})
 
         if(data.success){
