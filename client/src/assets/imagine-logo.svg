@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <defs>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6A00"/>
+      <stop offset="16%" stop-color="#FF2D55"/>
+      <stop offset="33%" stop-color="#FFD400"/>
+      <stop offset="50%" stop-color="#00C853"/>
+      <stop offset="66%" stop-color="#00B0FF"/>
+      <stop offset="83%" stop-color="#7C4DFF"/>
+      <stop offset="100%" stop-color="#FF42A1"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Transparent background by default -->
+  <g filter="url(#softGlow)">
+    <text x="50" y="200"
+          font-family="Poppins, Montserrat, Avenir Next, Segoe UI, Arial, sans-serif"
+          font-size="190"
+          font-weight="800"
+          letter-spacing="2"
+          fill="url(#rainbow)">
+      Imagine
+    </text>
+  </g>
+</svg>
